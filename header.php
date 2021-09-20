@@ -19,7 +19,7 @@
 						<a class="logo" href="<?php bloginfo('url')?>">Labb 1</a>
 					</div>
 					<div class="col-sm-6 hidden-xs">
-						<!-- Gets the search bar from WP -->
+						<!-- Gets the search bar -->
 						<?php get_search_form(); ?>
 					</div>
 					<div class="col-xs-4 text-right visible-xs">
@@ -35,7 +35,7 @@
 		<div class="mobile-search">
 			<form id="searchform" class="searchform">
 				<div>
-					<!-- Gets the search bar from WP -->
+					<!-- Gets the search bar -->
 					<?php get_search_form(); ?>
 				</div>
 			</form>

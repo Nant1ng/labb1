@@ -1,6 +1,6 @@
 <?php
 /**
- * Template för sökrutan
+ * Template for searchbar
  
  */
 ?>

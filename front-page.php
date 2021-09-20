@@ -5,7 +5,9 @@
 					<div class="row">
 						<div class="col-xs-12">
 							<div class="hero">
-								<img src="<?php bloginfo('template_directory');?>/img/city.jpg" alt="city"/>
+							<?php if(has_post_thumbnail()) : ?>
+                                    <img src="<?php echo get_the_post_thumbnail_url() ?>" alt="<?php the_title(); ?>" />
+                            <?php endif; ?>
 								<div class="text">
 									<h1><?php the_title(); ?></h1>
 									<p><?php the_content(); ?></p>

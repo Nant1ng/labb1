@@ -1,19 +1,15 @@
 <?php 
 
-// CSS
-function load_stylesheets() {
+// Loading CSS and JS
+function load() {
     wp_enqueue_style('custom', get_template_directory_uri() . '/css/bootstrap.css', array(), '0.1.0', 'all');
     wp_enqueue_style('fonts', get_template_directory_uri() . '/css/font-awesome.css', array(), '0.1.0', 'all');
     wp_enqueue_style('custom-style', get_template_directory_uri() . '/css/style.css', array(), '0.1.0', 'all');
     wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery.js', array(), '1.0.0', true );
     wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array(), '1.0.0', true );
 
-    wp_register_script('script', get_template_directory_uri() . '/js/script.js', array(), 1, 1, 1);
-    wp_enqueue_script('script');
-    wp_register_script('jquery', get_template_directory_uri() . '/js/jquery.js', array(), 1, 1, 1);
-    wp_enqueue_script('jquery');
 }
-add_action('wp_enqueue_scripts', 'load_stylesheets');
+add_action('wp_enqueue_scripts', 'load');
 
 
 
@@ -32,7 +28,7 @@ register_nav_menus(
 
 
 
-    //Add Widgets
+//  Add Widgets
 if (function_exists('register_sidebar')) {
 
     register_sidebar(array(

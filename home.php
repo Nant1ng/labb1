@@ -1,4 +1,8 @@
-<?php get_header() ?>
+<?php 
+// Load header template.
+    get_header() 
+
+?>
 
 <main>
     <section>
@@ -12,27 +16,35 @@
                         ?>
                                                                                         
                         <article>
-                            <!-- If post have image show image if not dont show -->
+                            <!-- If post have image show image if not dont show image(broken image) -->
                             <?php if(has_post_thumbnail()) : ?>
+                                <!-- If you click on the image than you will go to its post  -->
                                 <a href="<?php the_permalink();?>">   
-                                    <img src="<?php echo get_the_post_thumbnail_url() ?>" />
+                                    <!-- Gets the Image  -->
+                                    <img src="<?php echo get_the_post_thumbnail_url() ?>" alt="<?php the_title(); ?>" />
                                 </a>
                             <?php endif; ?>
+                            <!-- If you click on the title than you will go to its post  -->
                             <a href="<?php the_permalink();?>"> 
+                                                    <!-- Gets the title -->
                                 <h1 class="title"><?php the_title();?></h1>
                             </a>
                             <ul class="meta">
                                 <li>
+                                                            <!-- Get the date when the post was created -->
                                     <i class="fa fa-calendar"></i><?php the_date();?>
                                 </li>
                                 <li>
+                                                <!-- If you click on the author name than you will be send to a page where only the authors posts are  -->
                                     <i class="fa fa-user"></i> <?php the_author_posts_link(); ?>
                                 </li>                                                                 
                                 <li>
+                                                                                     <!-- Shows the post category-->
                                     <i class="fa fa-tag"></i> <a href="kategori.html"><?php the_category(" , ");?></a>
                                 </li>
                             </ul>
                             <p>
+                                <!-- Show the excrept of the post  -->
                                 <?php the_excerpt();?>
                             </p>
                                                                                     
@@ -60,7 +72,7 @@
                         <div id="sidebar">
                         <ul>
                         <li>
-                        <!-- Gets the search bar from WP -->
+                        <!-- Gets the search bar -->
                         <?php get_search_form(); ?>
                         </li>
                         </ul>
@@ -105,7 +117,6 @@
                         );
                         ?>
 
-
                         </li>
                         </ul>
                         </div>
@@ -114,5 +125,5 @@
             </div>
     </section>
 </main>
- 
+<!-- Load footer template. -->
 <?php get_footer(); ?>

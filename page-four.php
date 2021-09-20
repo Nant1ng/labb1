@@ -13,7 +13,7 @@ get_header();
 							<p><?php the_content();?></p>
 						</div>
 						<div class="col-xs-12 col-sm-4 col-md-6">
-                        <img src="<?php bloginfo('template_directory');?>/img/photo.jpg" alt="The Guy"/>
+                        <img src="<?php echo get_the_post_thumbnail_url() ?>" alt="<?php the_title(); ?>" />
 						</div>
 					</div>
 				</div>
